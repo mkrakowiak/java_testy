@@ -1,1 +1,1 @@
-# java_testy
+Testowanie aplikacji java
