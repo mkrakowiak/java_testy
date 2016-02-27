@@ -1,10 +1,9 @@
-package com.example;
+package com.example.app;
 
-
-
-public class Kalulator {
+public class Calculator {
 	
-	public Kalulator(){
+	
+	public Calculator(){
 		System.out.println("Kalkulator" + this);
 		
 		
@@ -28,5 +27,4 @@ public class Kalulator {
 		if(a>b) return true;
 		else return false;
 	}
-	
 }
