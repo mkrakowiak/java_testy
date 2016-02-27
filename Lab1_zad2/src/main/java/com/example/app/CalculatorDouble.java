@@ -1,11 +1,10 @@
-package com.example;
+package com.example.app;
 
-public class kalkulator {
-	public kalkulator(){
+public class CalculatorDouble {
+
+	public CalculatorDouble(){
 		System.out.println("Kalkulator" + this);
-		
-		
-	}
+		}
 	
 	public double add(double n1, double n2){
 		return n1 + n2;
@@ -25,5 +24,4 @@ public class kalkulator {
 		if(a>b) return true;
 		else return false;
 	}
-	
 }
