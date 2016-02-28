@@ -5,24 +5,26 @@ import org.junit.Test;
 
 public class LiczbaRzymskaTest {
 
-	private LiczbaRzymska rzym = new LiczbaRzymska(8);
-	private LiczbaRzymska rzym2 = new LiczbaRzymska(4);
-	private LiczbaRzymska rzym_za_duza = new LiczbaRzymska(15);
-	private LiczbaRzymska rzym_ujemna = new LiczbaRzymska(-2);
+private LiczbaRzymska rzym = new LiczbaRzymska(9);
+	private LiczbaRzymska rzym2 = new LiczbaRzymska(3);
+	private LiczbaRzymska rzym3 = new LiczbaRzymska(5);
+	private LiczbaRzymska rzym_za_duza = new LiczbaRzymska(22);
+	private LiczbaRzymska rzym_ujemna = new LiczbaRzymska(-5);
 	
 	@Test
 	public void testToStringProper() {
-		assertEquals("VIII", rzym.toString());
-		assertEquals("IV", rzym2.toString());
+		assertEquals("IX", rzym.toString());
+		assertEquals("III", rzym2.toString());
+		assertEquals("V", rzym3.toString());
 	}
 	
 	@Test
-	public void testTooBigNumber() {
+	public void testZaDuza() {
 		assertEquals("Zla liczba", rzym_za_duza.toString());
 	}
 	
 	@Test
-	public void testNegativeNumber() {
+	public void testUjemna() {
 		assertEquals("Zla liczba", rzym_ujemna.toString());
 	}
 }
