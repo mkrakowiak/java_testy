@@ -1,23 +1,20 @@
 package com.example.app;
 
-import static org.junit.Assert.*;
-import org.junit.rules.ExpectedException;
 
-import com.example.app.Bag;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class BagTest {
-	
-	
-	private Bag bagg = new Bag();
-	@Test
-	public void addCheck(){	
-		assertEquals(5, bagg.add(3,2));
-		
-	}
-	@Test
-	public void addSub(){
-		assertEquals(1, bagg.sub(3,2));
-		
-	}
 
+	BagManager testA = new BagManager();
+	Bag testB = new Bag(3,(float) 5.3,5.3);
+	
+	@Test
+	public void testAdd()
+	{	
+		testA.Add(0, testB);
+		assertEquals(testA.getSize(), 1);
+		testA.Remove(0);
+		assertEquals(testA.getSize(), 0);
+	}
 }
