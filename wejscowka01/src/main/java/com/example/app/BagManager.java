@@ -4,20 +4,15 @@ import java.util.List;
 
 public class BagManager{
 
-	private List<Bag> listA = new ArrayList<Bag>();
+	 List<Bag> bags = new ArrayList<Bag>();
 	
-	public void Add(int number, Bag bread)
+	public void addBag(Bag bag)
 	{
-		this.listA.add(number, bread);
+		bags.add(bag);
 	}
 	
-	public void Remove(int number)
+	public void removeBag(Bag bag)
 	{
-		this.listA.remove(number);
-	}
-	
-	public int getSize()
-	{
-		return this.listA.size();
+		bags.remove(bag);
 	}
 }
