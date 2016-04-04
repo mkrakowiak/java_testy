@@ -61,14 +61,14 @@ public class BagTest {
 	}
 	
 	@Test
-	public void findBagByValueWaga() {
+	public void findBagByWaga() {
 		expect(mock.findBagByValueDouble(waga)).andReturn(testBag).atLeastOnce();
 		replay(mock);
 		assertEquals(testBag, bagManager.findBagByValueDouble(waga));
 		verify(mock);
 	}
 	@Test
-	public void findBagByValueLotniczy() {
+	public void findBagByLotniczy() {
 		expect(mock.findBagByBool(lotniczy)).andReturn(testBag).atLeastOnce();
 		replay(mock);
 		assertEquals(testBag, bagManager.findBagByBool(lotniczy));
