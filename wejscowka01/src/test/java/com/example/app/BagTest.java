@@ -19,9 +19,9 @@ public class BagTest {
 	private BagManager bagManager;
 	private IMyList mock;
 	private Bag testBag = new Bag(7,true,9.3);
-	private final int testValue_int = 7;
-	private final double testValuedouble = 9.3;
-	private final boolean testValubool = true;
+	private final int testValueInt = 7;
+	private final double testValueDouble = 9.3;
+	private final boolean testValueBool = true;
 		private List<Bag> bags;
 	
 	
@@ -37,9 +37,6 @@ public class BagTest {
 		assertTrue(bagManager.addBag(testBag));
 		verify(mock);
 	}
-	
-	
-	
 	@Test
 	public void checkRemoveDesk() {
 		expect(mock.removeBag(testBag)).andReturn(true).atLeastOnce();
@@ -57,24 +54,24 @@ public class BagTest {
 	
 	@Test
 	public void findBagByValueInt() {
-		expect(mock.findBagByValueint(testValue_int)).andReturn(testBag).atLeastOnce();
+		expect(mock.findBagByValueInt(testValueInt)).andReturn(testBag).atLeastOnce();
 		replay(mock);
-		assertEquals(testBag, bagManager.findBagByValueint(testValue_int));
+		assertEquals(testBag, bagManager.findBagByValueInt(testValueInt));
 		verify(mock);
 	}
 	
 	@Test
 	public void findBagByValueDouble() {
-		expect(mock.findBagByValuedouble(testValuedouble)).andReturn(testBag).atLeastOnce();
+		expect(mock.findBagByValueDouble(testValueDouble)).andReturn(testBag).atLeastOnce();
 		replay(mock);
-		assertEquals(testBag, bagManager.findBagByValuedouble(testValuedouble));
+		assertEquals(testBag, bagManager.findBagByValueDouble(testValueDouble));
 		verify(mock);
 	}
 	@Test
 	public void findBagByValueBool() {
-		expect(mock.findBagBybool(testValubool)).andReturn(testBag).atLeastOnce();
+		expect(mock.findBagByBool(testValueBool)).andReturn(testBag).atLeastOnce();
 		replay(mock);
-		assertEquals(testBag, bagManager.findBagBybool(testValubool));
+		assertEquals(testBag, bagManager.findBagByBool(testValueBool));
 		verify(mock);
 	}
 	

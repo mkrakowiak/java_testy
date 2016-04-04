@@ -24,17 +24,17 @@ public class BagManager{
 		return myList.getAll();
 	}
 	
-	public Bag findBagByValueint(int value_int)
+	public Bag findBagByValueInt(int valueInt)
 	{
-		return myList.findBagByValueint(value_int);
+		return myList.findBagByValueInt(valueInt);
 	}
 	
-	public Bag findBagByValuedouble(double Value_double)
+	public Bag findBagByValueDouble(double ValueDouble)
 	{
-		return myList.findBagByValuedouble(Value_double);
+		return myList.findBagByValueDouble(ValueDouble);
 	}
-	public Bag findBagBybool(boolean Value_bool)
+	public Bag findBagByBool(boolean ValueBool)
 	{
-		return myList.findBagBybool(Value_bool);
+		return myList.findBagByBool(ValueBool);
 	}
 }
