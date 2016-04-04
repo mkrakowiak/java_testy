@@ -38,7 +38,7 @@ public class BagTest {
 		verify(mock);
 	}
 	@Test
-	public void checkRemoveDesk() {
+	public void checkRemoveBag() {
 		expect(mock.removeBag(testBag)).andReturn(true).atLeastOnce();
 		replay(mock);
 		assertTrue(bagManager.removeBag(testBag));
@@ -54,24 +54,24 @@ public class BagTest {
 	
 	@Test
 	public void findBagBySzerokosc() {
-		expect(mock.findBagByValueInt(szerokosc)).andReturn(testBag).atLeastOnce();
+		expect(mock.findBagBySzerokosc(szerokosc)).andReturn(testBag).atLeastOnce();
 		replay(mock);
-		assertEquals(testBag, bagManager.findBagByValueInt(szerokosc));
+		assertEquals(testBag, bagManager.findBagBySzerokosc(szerokosc));
 		verify(mock);
 	}
 	
 	@Test
 	public void findBagByWaga() {
-		expect(mock.findBagByValueDouble(waga)).andReturn(testBag).atLeastOnce();
+		expect(mock.findBagByWaga(waga)).andReturn(testBag).atLeastOnce();
 		replay(mock);
-		assertEquals(testBag, bagManager.findBagByValueDouble(waga));
+		assertEquals(testBag, bagManager.findBagByWaga(waga));
 		verify(mock);
 	}
 	@Test
 	public void findBagByLotniczy() {
-		expect(mock.findBagByBool(lotniczy)).andReturn(testBag).atLeastOnce();
+		expect(mock.findBagByLotniczy(lotniczy)).andReturn(testBag).atLeastOnce();
 		replay(mock);
-		assertEquals(testBag, bagManager.findBagByBool(lotniczy));
+		assertEquals(testBag, bagManager.findBagByLotniczy(lotniczy));
 		verify(mock);
 	}
 	

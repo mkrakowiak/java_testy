@@ -7,8 +7,8 @@ public interface IMyList {
 	boolean addBag(Bag bag);
 	boolean removeBag(Bag bag);
 	public List<Bag> getAll();
-	Bag findBagByValueInt(int value_int);
-	Bag findBagByValueDouble(double value_double);
-	Bag findBagByBool(boolean value_float);
+	Bag findBagBySzerokosc(int value_int);
+	Bag findBagByWaga(double value_double);
+	Bag findBagByLotniczy(boolean value_float);
 	
 }
