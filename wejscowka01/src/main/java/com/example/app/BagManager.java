@@ -4,9 +4,6 @@ import java.util.List;
 
 public class BagManager{
 
-	// List<Bag> bags = new ArrayList<Bag>();
-	
-	
 	
 	public IMyList myList;
 	public BagManager(IMyList myList){
@@ -15,13 +12,11 @@ public class BagManager{
 	
 	public boolean addBag(Bag bag)
 	{
-		//bags.add(bag);
 		return myList.addBag(bag);
 	}
 	
 	public boolean removeBag(Bag bag)
 	{
-		//bags.remove(bag);
 		return myList.removeBag(bag);
 	}
 	
