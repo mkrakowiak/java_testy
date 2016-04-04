@@ -56,7 +56,7 @@ public class BagTest {
 	}
 	
 	@Test
-	public void findBagByValueint() {
+	public void findBagByValueInt() {
 		expect(mock.findBagByValueint(testValue_int)).andReturn(testBag).atLeastOnce();
 		replay(mock);
 		assertEquals(testBag, bagManager.findBagByValueint(testValue_int));
@@ -64,14 +64,14 @@ public class BagTest {
 	}
 	
 	@Test
-	public void findBagByValuedouble() {
+	public void findBagByValueDouble() {
 		expect(mock.findBagByValuedouble(testValuedouble)).andReturn(testBag).atLeastOnce();
 		replay(mock);
 		assertEquals(testBag, bagManager.findBagByValuedouble(testValuedouble));
 		verify(mock);
 	}
 	@Test
-	public void findBagByValuebool() {
+	public void findBagByValueBool() {
 		expect(mock.findBagBybool(testValubool)).andReturn(testBag).atLeastOnce();
 		replay(mock);
 		assertEquals(testBag, bagManager.findBagBybool(testValubool));
