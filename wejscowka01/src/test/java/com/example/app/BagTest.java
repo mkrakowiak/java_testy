@@ -22,7 +22,7 @@ public class BagTest {
 	private final int szerokosc = 7;
 	private final double waga = 9.3;
 	private final boolean lotniczy = true;
-		private List<Bag> bags;
+	private List<Bag> bags;
 	
 	
 	@Before
@@ -53,7 +53,7 @@ public class BagTest {
 	}
 	
 	@Test
-	public void findBagByValueInt() {
+	public void findBagBySzerokosc() {
 		expect(mock.findBagByValueInt(szerokosc)).andReturn(testBag).atLeastOnce();
 		replay(mock);
 		assertEquals(testBag, bagManager.findBagByValueInt(szerokosc));
@@ -61,14 +61,14 @@ public class BagTest {
 	}
 	
 	@Test
-	public void findBagByValueDouble() {
+	public void findBagByValueWaga() {
 		expect(mock.findBagByValueDouble(waga)).andReturn(testBag).atLeastOnce();
 		replay(mock);
 		assertEquals(testBag, bagManager.findBagByValueDouble(waga));
 		verify(mock);
 	}
 	@Test
-	public void findBagByValueBool() {
+	public void findBagByValueLotniczy() {
 		expect(mock.findBagByBool(lotniczy)).andReturn(testBag).atLeastOnce();
 		replay(mock);
 		assertEquals(testBag, bagManager.findBagByBool(lotniczy));
