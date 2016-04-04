@@ -22,9 +22,9 @@ public class BagTest {
 	private BagManager bagManager;
 	private IMyList mock;
 	private Bag testBag = new Bag(7,(float)8.1,9.3);
-	private int testValue_int = 7;
-	private double testValue_double = 9.3;
-	private float testValue_float = (float)8.1;
+	private final int testValue_int = 7;
+	private final double testValuedouble = 9.3;
+	private final float testValuefloat = (float)8.1;
 		private List<Bag> bags;
 	
 	
@@ -34,7 +34,7 @@ public class BagTest {
 		bagManager = new BagManager(mock);
 	}
 	@Test
-	public void check_AddBag() {
+	public void checkAddBag() {
 		expect(mock.addBag(testBag)).andReturn(true).atLeastOnce();
 		replay(mock);
 		assertTrue(bagManager.addBag(testBag));
@@ -44,14 +44,14 @@ public class BagTest {
 	
 	
 	@Test
-	public void check_RemoveDesk() {
+	public void checkRemoveDesk() {
 		expect(mock.removeBag(testBag)).andReturn(true).atLeastOnce();
 		replay(mock);
 		assertTrue(bagManager.removeBag(testBag));
 		verify(mock);
 	}
 	@Test
-	public void check_GetAll() {
+	public void checkGetAll() {
 		expect(mock.getAll()).andReturn(bags);
 		replay(mock);
 		assertEquals(bags, bagManager.GetAllBag());
@@ -60,24 +60,24 @@ public class BagTest {
 	
 	@Test
 	public void check_FindBag_ByValue_int() {
-		expect(mock.FindBag_ByValue_int(testValue_int)).andReturn(testBag).atLeastOnce();
+		expect(mock.findBagByValueint(testValue_int)).andReturn(testBag).atLeastOnce();
 		replay(mock);
-		assertEquals(testBag, bagManager.FindBag_ByValue_int(testValue_int));
+		assertEquals(testBag, bagManager.findBagByValueint(testValue_int));
 		verify(mock);
 	}
 	
 	@Test
-	public void check_FindBag_ByValue_double() {
-		expect(mock.FindBag_ByValue_double(testValue_double)).andReturn(testBag).atLeastOnce();
+	public void checkFindBagByValuedouble() {
+		expect(mock.findBagByValuedouble(testValuedouble)).andReturn(testBag).atLeastOnce();
 		replay(mock);
-		assertEquals(testBag, bagManager.FindBag_ByValue_double(testValue_double));
+		assertEquals(testBag, bagManager.findBagByValuedouble(testValuedouble));
 		verify(mock);
 	}
 	@Test
-	public void check_FindBag_ByValue_float() {
-		expect(mock.FindBag_ByValue_float(testValue_float)).andReturn(testBag).atLeastOnce();
+	public void checkFindBagByValuefloat() {
+		expect(mock.findBagByValuefloat(testValuefloat)).andReturn(testBag).atLeastOnce();
 		replay(mock);
-		assertEquals(testBag, bagManager.FindBag_ByValue_float(testValue_float));
+		assertEquals(testBag, bagManager.findBagByValuefloat(testValuefloat));
 		verify(mock);
 	}
 	

@@ -29,17 +29,17 @@ public class BagManager{
 		return myList.getAll();
 	}
 	
-	public Bag FindBag_ByValue_int(int value_int)
+	public Bag findBagByValueint(int value_int)
 	{
-		return myList.FindBag_ByValue_int(value_int);
+		return myList.findBagByValueint(value_int);
 	}
 	
-	public Bag FindBag_ByValue_double(double Value_double)
+	public Bag findBagByValuedouble(double Value_double)
 	{
-		return myList.FindBag_ByValue_double(Value_double);
+		return myList.findBagByValuedouble(Value_double);
 	}
-	public Bag FindBag_ByValue_float(float Value_float)
+	public Bag findBagByValuefloat(float Value_float)
 	{
-		return myList.FindBag_ByValue_float(Value_float);
+		return myList.findBagByValuefloat(Value_float);
 	}
 }
