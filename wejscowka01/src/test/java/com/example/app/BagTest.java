@@ -15,16 +15,13 @@ import org.junit.Test;
 
 public class BagTest {
 	
-	//BagManager bagManager = new BagManager();
-	//@Test
-	
 	
 	private BagManager bagManager;
 	private IMyList mock;
-	private Bag testBag = new Bag(7,(float)8.1,9.3);
+	private Bag testBag = new Bag(7,true,9.3);
 	private final int testValue_int = 7;
 	private final double testValuedouble = 9.3;
-	private final float testValuefloat = (float)8.1;
+	private final boolean testValubool = true;
 		private List<Bag> bags;
 	
 	
@@ -59,7 +56,7 @@ public class BagTest {
 	}
 	
 	@Test
-	public void check_FindBag_ByValue_int() {
+	public void findBagByValueint() {
 		expect(mock.findBagByValueint(testValue_int)).andReturn(testBag).atLeastOnce();
 		replay(mock);
 		assertEquals(testBag, bagManager.findBagByValueint(testValue_int));
@@ -67,17 +64,17 @@ public class BagTest {
 	}
 	
 	@Test
-	public void checkFindBagByValuedouble() {
+	public void findBagByValuedouble() {
 		expect(mock.findBagByValuedouble(testValuedouble)).andReturn(testBag).atLeastOnce();
 		replay(mock);
 		assertEquals(testBag, bagManager.findBagByValuedouble(testValuedouble));
 		verify(mock);
 	}
 	@Test
-	public void checkFindBagByValuefloat() {
-		expect(mock.findBagByValuefloat(testValuefloat)).andReturn(testBag).atLeastOnce();
+	public void findBagByValuebool() {
+		expect(mock.findBagBybool(testValubool)).andReturn(testBag).atLeastOnce();
 		replay(mock);
-		assertEquals(testBag, bagManager.findBagByValuefloat(testValuefloat));
+		assertEquals(testBag, bagManager.findBagBybool(testValubool));
 		verify(mock);
 	}
 	

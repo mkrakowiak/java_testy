@@ -38,8 +38,8 @@ public class BagManager{
 	{
 		return myList.findBagByValuedouble(Value_double);
 	}
-	public Bag findBagByValuefloat(float Value_float)
+	public Bag findBagBybool(boolean Value_bool)
 	{
-		return myList.findBagByValuefloat(Value_float);
+		return myList.findBagBybool(Value_bool);
 	}
 }

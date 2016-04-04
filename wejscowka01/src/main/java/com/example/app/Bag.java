@@ -3,11 +3,11 @@ package com.example.app;
 public class Bag {
 
 	private int a;
-	private float b;
+	private boolean b;
 	private double c;
 
 
-	public Bag(int a, float b, double c)
+	public Bag(int a, boolean b, double c)
 	{
 		this.a = a;
 		this.b = b;
@@ -22,11 +22,11 @@ public class Bag {
 		this.a = a;
 	}
 
-	public float getB() {
+	public boolean getB() {
 		return b;
 	}
 
-	public void setB(float b) {
+	public void setB(boolean b) {
 		this.b = b;
 	}
 
