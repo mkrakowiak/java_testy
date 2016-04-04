@@ -18,10 +18,10 @@ public class BagTest {
 	
 	private BagManager bagManager;
 	private IMyList mock;
-	private Bag testBag = new Bag(7,true,9.3);
-	private final int szerokosc = 7;
-	private final double waga = 9.3;
-	private final boolean lotniczy = true;
+	static Bag testBag = new Bag(7,true,9.3);
+	static final int szerokosc = 7;
+	static final double waga = 9.3;
+	static final boolean lotniczy = true;
 	private List<Bag> bags;
 	
 	
