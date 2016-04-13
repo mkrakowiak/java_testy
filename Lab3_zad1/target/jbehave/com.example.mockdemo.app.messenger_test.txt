@@ -1,0 +1,22 @@
+
+(com/example/mockdemo/app/messenger_test.story)
+Scenario: message is sent
+Given servers address by inf.ug.edu.pl
+And message by some message
+When message can be send
+And messenger sends message (PENDING)
+Then the result should be equal 0 (PENDING)
+@When("messenger sends message")
+@Pending
+public void whenMessengerSendsMessage() {
+  // PENDING
+}
+
+@Then("the result should be equal 0")
+@Pending
+public void thenTheResultShouldBeEqual0() {
+  // PENDING
+}
+
+
+
