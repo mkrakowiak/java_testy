@@ -1,0 +1,6 @@
+#org.jbehave.core.embedder.StoryManager
+#Mon Apr 18 13:52:39 CEST 2016
+threads=1
+total=0
+threadAverage=0
+com/example/app/bag_manager_test.story=0
