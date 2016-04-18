@@ -28,6 +28,6 @@ public class BagManagerTest extends JUnitStory {
 	@Override
 	public InjectableStepsFactory stepsFactory() {
 		// varargs, can have more that one steps classes
-		return new InstanceStepsFactory(configuration(), new BagManagerTest());
+		return new InstanceStepsFactory(configuration(), new BagManagerSteps());
 	}
 }
