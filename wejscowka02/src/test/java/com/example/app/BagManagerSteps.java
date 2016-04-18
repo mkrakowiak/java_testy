@@ -13,12 +13,14 @@ public class BagManagerSteps {
 		BagManager bagManager = new BagManager();
 	}
 	
-	@When("add to list $a $b $c")
-	public void setArguments(int a, boolean b, double c){
+	@When("add to list weight $weight is air $air width $width")
+	
+	
+	public void setArguments(int weight, boolean air, double width){
 		BagManager bagManager = new BagManager();
 		int SizeBeforeAdd = 0;
 
-		Bag cos = new Bag(a,b,c);
+		Bag cos = new Bag(weight,air,width);
 
 		bagManager.addBag(cos);
 
