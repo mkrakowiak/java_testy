@@ -50,10 +50,6 @@ public class MySteps extends Steps{
 	public void whenMessengerSendsMessage(){
 		ms.setMessageSent(true);
 	}
-	@And("messager sends message") 
-	public void whenMessengerSendsMessage2(){
-		ms.setMessageSent(true);
-	}
 	
 	@When("message can be send") 
 	public void whenMessageCanBeSend(){
