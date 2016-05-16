@@ -62,7 +62,7 @@ public class PersonManager {
 		return connection;
 	}
 
-	void clearPersons() {
+	void deleteAllPersons() {
 		try {
 			deleteAllPersonsStmt.executeUpdate();
 		} catch (SQLException e) {
@@ -92,12 +92,12 @@ public class PersonManager {
 		return count;
 	}
 	public int addPersonGetID(Person person) {
-		int count = 0, key = 0;
+		int  key = 0;
 		try {
 			addPersonStmt.setString(1, person.getName());
 			addPersonStmt.setInt(2, person.getYob());
 
-			count = addPersonStmt.executeUpdate();
+			addPersonStmt.executeUpdate();
 			ResultSet rs = addPersonStmt.getGeneratedKeys();
 			if (rs.next()){
 				key = rs.getInt(1);

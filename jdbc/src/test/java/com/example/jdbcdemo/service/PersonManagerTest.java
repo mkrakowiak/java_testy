@@ -27,11 +27,11 @@ public class PersonManagerTest {
 	}
 	
 	@Test
-	public void checkAdding(){
+	public void checkAdd(){
 		
 		Person person1 = new Person(NAME_1, YOB_1);
 		
-		personManager.clearPersons();
+		personManager.deleteAllPersons();
 		assertEquals(1,personManager.addPerson(person1));
 		
 		List<Person> persons = personManager.getAllPersons();
@@ -43,13 +43,13 @@ public class PersonManagerTest {
 	}
 	
 	@Test
-	public void checkUpdating(){
+	public void checkUpdate(){
 		
 		Person person1 = new Person(NAME_1, YOB_1);
 		Person person2 = new Person(NAME_2, YOB_2);
 		Person person3 = new Person(NAME_3, YOB_3);
 		
-		personManager.clearPersons();
+		personManager.deleteAllPersons();
 		assertEquals(1,personManager.addPerson(person1));
 		assertEquals(1,personManager.addPerson(person2));
 		assertEquals(1,personManager.addPerson(person3));
@@ -64,7 +64,7 @@ public class PersonManagerTest {
 		Person person2 = new Person(NAME_2, YOB_2);
 		Person person3 = new Person(NAME_3, YOB_3);
 		
-		personManager.clearPersons();
+		personManager.deleteAllPersons();
 		assertEquals(1,personManager.addPerson(person1));
 		assertEquals(1,personManager.addPerson(person2));
 		assertEquals(1,personManager.addPerson(person3));
@@ -86,30 +86,30 @@ public class PersonManagerTest {
 		assertEquals(YOB_3, personRetrieved3.getYob());
 	}
 	@Test
-	public void checkDeleting(){
+	public void checkDelete(){
 		
 		Person person1 = new Person(NAME_1, YOB_1);
 		Person person2 = new Person(NAME_2, YOB_2);
 		Person person3 = new Person(NAME_3, YOB_3);
 		
-		personManager.clearPersons();
+		personManager.deleteAllPersons();
 		assertEquals(1,personManager.addPerson(person1));
 		assertEquals(1,personManager.addPerson(person2));
 		assertEquals(1,personManager.addPerson(person3));
 		
-		personManager.clearPersons();
+		personManager.deleteAllPersons();
 		
 		assertEquals(0, personManager.getAllPersons().size());
 	}
 	
 	@Test
-	public void checkSelectingByName(){
+	public void checkSelectByName(){
 		
 		Person person1 = new Person(NAME_1, YOB_1);
 		Person person2 = new Person(NAME_1, YOB_2);
 		Person person3 = new Person(NAME_2, YOB_3);
 		
-		personManager.clearPersons();
+		personManager.deleteAllPersons();
 		assertEquals(1,personManager.addPerson(person1));
 		assertEquals(1,personManager.addPerson(person2));
 		assertEquals(1,personManager.addPerson(person3));
