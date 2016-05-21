@@ -1,1 +1,1 @@
-Testowanie aplikacji java
+Testowanie aplikacji java!
