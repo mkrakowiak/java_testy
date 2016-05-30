@@ -22,7 +22,8 @@ public class BookManager {
 	private PreparedStatement deleteAllBooksStmt;
 	private PreparedStatement getAllBooksStmt;
 	private PreparedStatement getBookByIdStmt;
-	
+	private PreparedStatement deleteBookStmt;
+	private PreparedStatement updateBookStmt;
 	private Statement statement;
 	
 	public BookManager() {
@@ -51,6 +52,11 @@ public class BookManager {
 					.prepareStatement("SELECT id, title, author, year FROM Book");
 			getBookByIdStmt = connection
 					.prepareStatement("SELECT id, title, author, year FROM Book where id = ?");
+			deleteBookStmt = connection
+					.prepareStatement("DELETE FROM Book WHERE id = ?");
+			updateBookStmt = connection
+					.prepareStatement("UPDATE Book SET title = ?, author = ?,year = ?  WHERE id = ?");
+			
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -84,6 +90,34 @@ public class BookManager {
 		}
 		return count;
 	}
+	public int deleteBookId(Book book){
+		int count = 0;
+		try {
+			deleteBookStmt.setLong(1, book.getId());
+			
+			count = deleteBookStmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+	
+	
+	public int updateBook(Book book, String title,String author, int year){
+		int count = 0;
+		try{
+			updateBookStmt.setString(1, title);
+			updateBookStmt.setString(2, author);
+			updateBookStmt.setInt(3, year);
+			updateBookStmt.setLong(4, book.getId());
+			count = updateBookStmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+	
 	
 	public List<Book> getAllBooks() {
 		List<Book> books = new ArrayList<Book>();
