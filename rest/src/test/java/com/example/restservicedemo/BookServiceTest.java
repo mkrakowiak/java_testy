@@ -33,7 +33,7 @@ public class BookServiceTest {
 	public void addBooks() {
 		delete("/book/").then().assertThat().statusCode(200);
 
-		Book book = new Book(1L, BOOK_TITLE, BOOK_AUTHOR, 1994);
+		Book book = new Book(1, BOOK_TITLE, BOOK_AUTHOR, 1994);
 
 		given().contentType(MediaType.APPLICATION_JSON).body(book).when().post("/book/").then().assertThat()
 				.statusCode(201);
