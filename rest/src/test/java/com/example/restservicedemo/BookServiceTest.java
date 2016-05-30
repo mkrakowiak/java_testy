@@ -7,7 +7,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 //import static org.hamcrest.Matchers.containsString;
 //import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.equalToIgnoringCase;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
 import javax.ws.rs.core.MediaType;
 
@@ -15,10 +16,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.example.restservicedemo.domain.Book;
+import com.example.restservicedemo.service.BookManager;
 import com.jayway.restassured.RestAssured;
 
 public class BookServiceTest {
-
+	private BookManager bm = new BookManager();
 	public static final String BOOK_TITLE = "Eragon";
 	public static final String BOOK_AUTHOR = "Paolini";
 	public static final String BOOK_TITLE2 = "Gildia";
@@ -60,7 +62,7 @@ public class BookServiceTest {
 		Book rBook = get("/book/1").as(Book.class);
 
 		
-		
+
 		Book book2 = new Book(2, BOOK_TITLE2, BOOK_AUTHOR2, 1995);
 
 		given().contentType(MediaType.APPLICATION_JSON).body(book2).when().post("/book/").then().assertThat()
@@ -71,5 +73,22 @@ public class BookServiceTest {
 		assertThat(BOOK_TITLE, equalToIgnoringCase(rBook.getTitle()));
 		assertThat(BOOK_TITLE2, equalToIgnoringCase(rBook2.getTitle()));
 	}
+	
+	@Test
+	public void deleteAll() {
+		
+		bm.clearBooks();
+		String books = get("/book/all/").asString();
+		delete("/book/").then().assertThat().statusCode(200);
+		Book book = new Book(1, BOOK_TITLE, BOOK_AUTHOR, 1994);
 
+		given().contentType(MediaType.APPLICATION_JSON).body(book).when().post("/book/").then().assertThat()
+				.statusCode(201);
+
+		Book rBook = get("/book/1").as(Book.class);
+		
+		bm.clearBooks();
+		
+		assertNull(books,null);
+	}
 }
