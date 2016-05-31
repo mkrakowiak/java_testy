@@ -1,6 +1,0 @@
-#org.jbehave.core.embedder.StoryManager
-#Wed Apr 13 15:44:32 CEST 2016
-com/example/mockdemo/app/messenger_test.story=0
-threads=1
-total=0
-threadAverage=0
