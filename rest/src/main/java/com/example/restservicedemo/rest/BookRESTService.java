@@ -37,6 +37,16 @@ public class BookRESTService {
 		return Response.status(201).entity("Book").build();
 	}
 	
+	
+	@GET
+	@Path("/author/{author}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Book> getBookByAuthor(@PathParam("author") String author){
+		List<Book> Book = bm.getBookByAuthor(author);
+		return Book;
+	}
+	
+	
 	@GET
 	@Path("/all")
 	@Produces(MediaType.APPLICATION_JSON)
