@@ -1,4 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-  <BOOK/>
+  <BOOK ID="1" TITLE="ERAGON" AUTHOR="Paolini" YEAR="2001"/>
 </dataset>
