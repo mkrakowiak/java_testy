@@ -52,7 +52,6 @@ public class BookServiceRESTDBTest {
 
 	@Test
 	public void addBook() throws Exception{
-		delete("/book/").then().assertThat().statusCode(200);
 		Book aBook = new Book(1,"qq","aa",1963);
 		given().contentType(MediaType.APPLICATION_JSON).body(aBook)
 				.when().post("/book/").then().assertThat().statusCode(201);
