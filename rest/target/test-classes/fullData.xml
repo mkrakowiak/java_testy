@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <BOOK ID="2" TITLE="ERAGON" AUTHOR="Paolini" YEAR="2001"/>
+  <BOOK ID="3" TITLE="Gildia" AUTHOR="Canavan" YEAR="2003"/>
+  <BOOK ID="4" TITLE="Nowa" AUTHOR="Jakas" YEAR="1993"/>
+  <BOOK ID="5" TITLE="Najstarszy" AUTHOR="Paolini" YEAR="2002"/>
+  
+</dataset>
