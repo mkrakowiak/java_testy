@@ -55,7 +55,7 @@ public class BookServiceRESTDBTest {
     @Test
     public void addPeson() throws Exception{
 
-        Book aBook = new Book(2,"Gildia", "Canavan",2003);
+        Book aBook = new Book(2,"Gildia", "Canavan",2009);
         given().contentType(MediaType.APPLICATION_JSON).body(aBook)
                 .when().post("/book/").then().assertThat().statusCode(201);
 
@@ -71,6 +71,7 @@ public class BookServiceRESTDBTest {
         Assertion.assertEquals(expectedTable, filteredTable);
     }
 
+	
     @AfterClass
     public static void tearDown() throws Exception{
         databaseTester.onTearDown();
